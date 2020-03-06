@@ -1,0 +1,1 @@
+# dart_event_sourcing_generator

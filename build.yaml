@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      dart_event_sourcing_generator|aggregate_command_handler:
+        enabled: true
+builders:
+  aggregate_command_handler:
+    target: ":dart_event_sourcing_generator"
+    import: "package:dart_event_sourcing_generator/builder.dart"
+    builder_factories: ["aggregateCommandHandler"]
+    build_extensions: {".dart": ["_command_handler.dart"]}
+    auto_apply: dependents
+    build_to: source
